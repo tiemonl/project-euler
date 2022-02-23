@@ -27,25 +27,35 @@ fun primeFactors(n: Number): List<Int> {
 
 fun largestPrimeFactor(n: Number) = primeFactors(n).maxOf { it }
 
-fun generatePrimes(upperLimit: Number): List<Int> {
-    val primes = mutableListOf(2)
-    var isPrime: Boolean
-    var j: Int
+fun generatePrimesUnderN(upperLimit: Number): List<Number> {
+    val primes = mutableListOf(2L)
 
-    for (i in 3 until upperLimit.toInt() step 2) {
-        j = 0
-        isPrime = true
-        while (primes[j] * primes[j] <= i) {
-            if (i % primes[j] == 0) {
-                isPrime = false
-                break
-            }
-            j++
-        }
-        if (isPrime) {
-            primes.add(i)
-        }
+    for (i in 3 until upperLimit.toLong() step 2) {
+        if (isPrime(primes, i)) primes.add(i)
     }
 
     return primes.toList()
+}
+
+fun findNthPrime(upperLimit: Number): Number {
+    var i = 1L
+    val primes = mutableListOf(2L)
+    while (primes.size < upperLimit.toLong()) {
+        i += 2
+        if (isPrime(primes, i)) primes.add(i)
+    }
+    return primes.last()
+}
+
+private fun isPrime(primes: MutableList<Long>, index: Long): Boolean {
+    var j = 0
+    var isPrime = true
+    while (primes[j] * primes[j] <= index) {
+        if (index % primes[j] == 0L) {
+            isPrime = false
+            break
+        }
+        j++
+    }
+    return isPrime
 }

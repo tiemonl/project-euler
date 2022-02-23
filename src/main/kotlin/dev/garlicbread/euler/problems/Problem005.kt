@@ -2,7 +2,7 @@ package dev.garlicbread.euler.problems
 
 import dev.garlicbread.euler.Problem
 import dev.garlicbread.euler.solve
-import dev.garlicbread.euler.utils.generatePrimes
+import dev.garlicbread.euler.utils.generatePrimesUnderN
 import kotlin.math.floor
 import kotlin.math.ln
 import kotlin.math.pow
@@ -16,7 +16,7 @@ class Problem005 : Problem<Int>(
 
     override fun solveProblem(): Int {
         val max = 20.0
-        val primes = generatePrimes(max)
+        val primes = generatePrimesUnderN(max)
         var result = 1
         (primes.indices).map {
             result *= primes[it].toDouble().pow(floor(ln(max) / ln(primes[it].toDouble()))).toInt()
