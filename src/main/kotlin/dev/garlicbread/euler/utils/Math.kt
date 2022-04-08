@@ -7,6 +7,11 @@ fun gauss(n: Long) = (n * (n + 1)) / 2
 
 fun gaussSquareNumbers(n: Long) = (n * (n + 1) * (2 * n + 1)) / 6
 
+fun gcd(a: Int, b: Int, vararg numbers: Int): Int = when {
+    numbers.isEmpty() -> if (b == 0) a else gcd(b, a % b)
+    else -> gcd(gcd(a, b), numbers.first(), *numbers.drop(1).toIntArray())
+}
+
 fun primeFactors(n: Number): List<Int> {
     val primeFactors = mutableListOf<Int>()
     var temp = n.toLong()
@@ -58,4 +63,19 @@ private fun isPrime(primes: MutableList<Long>, index: Long): Boolean {
         j++
     }
     return isPrime
+}
+
+fun numberOfDivisors(num: Number): Number {
+    var nod = 0
+    val sqrt = sqrt(num.toDouble()).toInt()
+
+    for (i in 1..sqrt) {
+        if (num.toDouble().mod(i.toDouble()) == 0.0) {
+            nod += 2
+        }
+    }
+    // Correction if the number is a perfect square
+    if (sqrt * sqrt == num) nod--
+
+    return nod
 }

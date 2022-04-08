@@ -17,8 +17,8 @@ fun getInput(problem: Int): List<String>? {
 
 fun <T : Any> printResult(block: () -> Problem<T>) {
     val problem = block()
-    val problemResult = problem.solveProblem().bold("36")
     println("Problem ${problem.problem}".bold())
+    val problemResult = problem.solveProblem().bold("36")
     println("Result: $problemResult")
 }
 
