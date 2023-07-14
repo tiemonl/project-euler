@@ -1,5 +1,6 @@
 package dev.garlicbread.euler.utils
 
+import java.math.BigInteger
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
@@ -25,8 +26,9 @@ fun primeFactors(n: Number): List<Int> {
             temp /= i
         }
     }
-    if (temp > 2)
+    if (temp > 2) {
         primeFactors.add(temp.toInt())
+    }
     return primeFactors
 }
 
@@ -79,3 +81,5 @@ fun numberOfDivisors(num: Number): Number {
 
     return nod
 }
+
+fun factorial(num: Int): BigInteger = generateSequence(Pair(1, BigInteger.ONE)) { Pair(it.first + 1, it.second.multiply(BigInteger.valueOf(it.first.inc().toLong()))) }.take(num).last().second

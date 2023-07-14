@@ -10,6 +10,8 @@ data class Point(
 
     operator fun times(point: Point) = Point(x * point.x, y * point.y)
 
+    operator fun minus(point: Point) = Point(x - point.x, y - point.y)
+
     operator fun times(by: Int) = Point(x * by, y * by)
 
     fun move(dx: Int, dy: Int) = Point(x + dx, y + dy)
