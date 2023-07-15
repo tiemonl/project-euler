@@ -8,9 +8,9 @@ data class Point(
 ) {
     operator fun plus(point: Point) = Point(x + point.x, y + point.y)
 
-    operator fun times(point: Point) = Point(x * point.x, y * point.y)
-
     operator fun minus(point: Point) = Point(x - point.x, y - point.y)
+
+    operator fun times(point: Point) = Point(x * point.x, y * point.y)
 
     operator fun times(by: Int) = Point(x * by, y * by)
 
