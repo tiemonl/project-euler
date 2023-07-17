@@ -8,5 +8,5 @@ enum class Direction(val point: Point) {
     South(Point(0, -1)),
     SouthEast(Point(1, -1)),
     SouthWest(Point(-1, -1)),
-    West(Point(-1, 0));
+    West(Point(-1, 0)),
 }

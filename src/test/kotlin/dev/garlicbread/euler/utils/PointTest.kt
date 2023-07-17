@@ -154,12 +154,4 @@ class PointTest {
             Point(-1, -1),
         )
     }
-
-    @Test
-    fun slope() {
-    }
-
-    @Test
-    fun pointsInBetween() {
-    }
 }
