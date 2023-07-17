@@ -6,13 +6,12 @@ import dev.garlicbread.euler.utils.gauss
 
 fun main() = solve { Problem001() }
 
-class Problem001 : Problem<Int>(
-    problem = 1
+class Problem001(
+    problemInput: Long = 999L,
+) : Problem<Int>(
+    problem = 1,
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
-    override fun solveProblem(): Int {
-        val n = 999L
-        return (3 * gauss(((n) / 3)) + 5 * gauss(((n) / 5)) - 15 * gauss(((n) / 15))).toInt()
-    }
+    override fun solveProblem() = (3 * gauss(((input) / 3)) + 5 * gauss(((input) / 5)) - 15 * gauss(((input) / 15))).toInt()
 }

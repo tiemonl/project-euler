@@ -5,13 +5,15 @@ import dev.garlicbread.euler.solve
 
 fun main() = solve { Problem009() }
 
-class Problem009 : Problem<Int>(
-    problem = 9
+class Problem009(
+    problemInput: Int = 1000
+) : Problem<Int>(
+    problem = 9,
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
     override fun solveProblem(): Int {
-        val upperLimit = 1000
+        val upperLimit = input
         var product = 0
         for (a in 3..upperLimit / 3) {
             for (b in a..upperLimit / 2) {

@@ -6,12 +6,12 @@ import dev.garlicbread.euler.utils.findNthPrime
 
 fun main() = solve { Problem007() }
 
-class Problem007 : Problem<Number>(
+class Problem007(
+    problemInput: Int = 10001
+) : Problem<Number>(
     problem = 7
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
-    private val upperLimit = 10001
-
-    override fun solveProblem(): Number = findNthPrime(upperLimit)
+    override fun solveProblem(): Number = findNthPrime(input)
 }

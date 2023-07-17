@@ -8,14 +8,16 @@ import kotlin.math.pow
 
 fun main() = solve { Problem006() }
 
-class Problem006 : Problem<Int>(
+class Problem006(
+    problemInput: Long = 100
+) : Problem<Int>(
     problem = 6
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
     override fun solveProblem(): Int {
-        val sumSquared = gauss(100).toDouble().pow(2)
-        val squaredSum = gaussSquareNumbers(100)
+        val sumSquared = gauss(input).toDouble().pow(2)
+        val squaredSum = gaussSquareNumbers(input)
         return (sumSquared - squaredSum).toInt()
     }
 }

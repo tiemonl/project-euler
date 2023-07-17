@@ -9,17 +9,18 @@ import kotlin.math.pow
 
 fun main() = solve { Problem005() }
 
-class Problem005 : Problem<Int>(
+class Problem005(
+    problemInput: Int = 20
+) : Problem<Int>(
     problem = 5
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
     override fun solveProblem(): Int {
-        val max = 20.0
-        val primes = generatePrimesUnderN(max)
+        val primes = generatePrimesUnderN(input)
         var result = 1
         (primes.indices).map {
-            result *= primes[it].toDouble().pow(floor(ln(max) / ln(primes[it].toDouble()))).toInt()
+            result *= primes[it].toDouble().pow(floor(ln(input.toDouble()) / ln(primes[it].toDouble()))).toInt()
         }
         return result
     }

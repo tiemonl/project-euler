@@ -5,32 +5,39 @@ import dev.garlicbread.euler.solve
 
 fun main() = solve { Problem004() }
 
-class Problem004 : Problem<Int>(
-    problem = 4
+class Problem004(
+    problemInput: Problem004Input = Problem004Input(
+        upperBound = 999,
+        lowerBound = 100,
+    ),
+) : Problem<Int>(
+    problem = 4,
 ) {
-    override val input = rawInput
+    data class Problem004Input(val upperBound: Int, val lowerBound: Int)
+
+    override val input = problemInput
 
     override fun solveProblem(): Int {
         var found = false
-        var firstHalf = 998
-        var palin = 0
+        var firstHalf = input.upperBound - 1
+        var palindrome = 0
         val factors = IntArray(2)
 
         while (!found) {
             firstHalf--
-            palin = (firstHalf.toString() + firstHalf.toString().reversed()).toInt()
-            for (i in 999 downTo 100) {
-                if (palin / i > 999 || i * i < palin) {
+            palindrome = (firstHalf.toString() + firstHalf.toString().reversed()).toInt()
+            for (i in input.upperBound downTo input.lowerBound) {
+                if (palindrome / i > input.upperBound || i * i < palindrome) {
                     break
                 }
-                if (palin % i == 0) {
+                if (palindrome % i == 0) {
                     found = true
-                    factors[0] = palin / i
+                    factors[0] = palindrome / i
                     factors[1] = i
                     break
                 }
             }
         }
-        return palin
+        return palindrome
     }
 }

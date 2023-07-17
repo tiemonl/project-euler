@@ -6,12 +6,12 @@ import dev.garlicbread.euler.utils.largestPrimeFactor
 
 fun main() = solve { Problem003() }
 
-class Problem003 : Problem<Int>(
+class Problem003(
+    problemInput: Long = 600851475143
+) : Problem<Int>(
     problem = 3
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
-    override fun solveProblem(): Int {
-        return largestPrimeFactor(600851475143)
-    }
+    override fun solveProblem() = largestPrimeFactor(input)
 }

@@ -5,12 +5,12 @@ import dev.garlicbread.euler.solve
 
 fun main() = solve { Problem014() }
 
-class Problem014 : Problem<Long>(
+class Problem014(
+    problemInput: Long = 1000000
+) : Problem<Long>(
     problem = 14
 ) {
-    override val input = rawInput
-
-    private val limit = 1000000L
+    override val input = problemInput
 
     private val cache = mutableMapOf(1L to 1)
 
@@ -18,7 +18,7 @@ class Problem014 : Problem<Long>(
         var longestChain = 0
         var startingNum = 0L
         var currentNum: Long
-        for (i in 2..limit) {
+        for (i in 2..input) {
             var length = 0
             currentNum = i
             while (currentNum > 1 && currentNum >= i) {

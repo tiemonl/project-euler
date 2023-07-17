@@ -8,13 +8,12 @@ import kotlin.time.times
 
 fun main() = solve { Problem015() }
 
-class Problem015 : Problem<BigInteger>(
+class Problem015(
+    problemInput: Int = 20,
+) : Problem<BigInteger>(
     problem = 15,
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
-    override fun solveProblem(): BigInteger {
-        val sides = 20
-        return factorial(sides.times(2)).divide(factorial(sides).multiply(factorial(sides)))
-    }
+    override fun solveProblem(): BigInteger = factorial(input.times(2)).divide(factorial(input).multiply(factorial(input)))
 }

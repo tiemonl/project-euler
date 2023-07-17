@@ -5,16 +5,18 @@ import dev.garlicbread.euler.solve
 
 fun main() = solve { Problem002() }
 
-class Problem002 : Problem<Int>(
+class Problem002(
+    problemInput: Int = 4_000_000
+) : Problem<Int>(
     problem = 2
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
     override fun solveProblem(): Int {
         var sum = 0
         var a = 1
         var b = 1
-        while (b < 4000000) {
+        while (b < input) {
             val temp = b
             b += a
             a = temp
