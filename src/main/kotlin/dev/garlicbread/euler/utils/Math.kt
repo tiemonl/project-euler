@@ -83,3 +83,20 @@ fun numberOfDivisors(num: Number): Number {
 }
 
 fun factorial(num: Int): BigInteger = generateSequence(Pair(1, BigInteger.ONE)) { Pair(it.first + 1, it.second.multiply(BigInteger.valueOf(it.first.inc().toLong()))) }.take(num).last().second
+
+fun getDivisorsOf(n: Long): Set<Long> {
+    val limit = sqrt(n.toDouble()).toLong()
+    return (1L..limit)
+        .filter { n % it == 0L }
+        .flatMap {
+            val squaredIsN = it * it == n
+            if (squaredIsN) listOf(it) else listOf(it, n / it)
+        }
+        .toSortedSet()
+}
+
+fun getProperDivisorsOf(n: Long): Set<Long> {
+    return getDivisorsOf(n)
+        .filter { it != n }
+        .toSortedSet()
+}
