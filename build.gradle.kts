@@ -17,11 +17,12 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
 
     // Test
     testImplementation(platform("org.junit:junit-bom:5.9.3"))
     testImplementation("com.google.truth:truth:1.1.3")
-    implementation("io.mockk:mockk:1.13.5") {
+    testImplementation("io.mockk:mockk:1.13.5") {
         exclude(group = "org.jetbrains.kotlin", module = "kotlin-scripting-jvm")
     }
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")

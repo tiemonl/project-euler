@@ -30,10 +30,12 @@ import ${package}.solve
 
 fun main() = solve { Problem${paddedProblem}() }
 
-class Problem${paddedProblem} : Problem<${type}>(
+class Problem${paddedProblem}(
+    problemInput: Int = TODO()
+) : Problem<${type}>(
     problem = $problem
 ) {
-    override val input = rawInput
+    override val input = problemInput
 
     override fun solveProblem(): ${type} {
         return 0

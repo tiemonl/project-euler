@@ -26,4 +26,11 @@ echo "Creating puzzle for Project Euler problem #$PROBLEM..."
 source tools/createproblemfile
 
 createproblemfile $PROBLEM $TYPE
+
+if [[ $? -eq 0 ]]; then
+  getinput
+  source tools/createtestfiles
+  createtestfile $PROBLEM
+fi
+
 echo "All done! Happy coding!"
