@@ -7,9 +7,9 @@ import dev.garlicbread.euler.utils.numberOfDivisors
 fun main() = solve { Problem012() }
 
 class Problem012(
-    problemInput: Int = 500
+    problemInput: Int = 500,
 ) : Problem<Int>(
-    problem = 12
+    problem = 12,
 ) {
     override val input = problemInput
 

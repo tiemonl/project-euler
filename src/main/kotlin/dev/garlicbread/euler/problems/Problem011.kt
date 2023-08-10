@@ -8,7 +8,7 @@ import dev.garlicbread.euler.utils.Point
 fun main() = solve { Problem011() }
 
 class Problem011 : Problem<Long>(
-    problem = 11
+    problem = 11,
 ) {
     override val input = rawInput!!.flatMapIndexed { x, numbers ->
         numbers.split(" ").mapIndexed { y, digit -> Point(x, y) to digit.toInt() }

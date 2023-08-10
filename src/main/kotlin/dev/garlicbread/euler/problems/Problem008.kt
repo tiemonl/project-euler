@@ -6,9 +6,9 @@ import dev.garlicbread.euler.solve
 fun main() = solve { Problem008() }
 
 class Problem008(
-    val problemInput: Int = 13
+    val problemInput: Int = 13,
 ) : Problem<Long>(
-    problem = 8
+    problem = 8,
 ) {
     override val input = rawInput?.flatMap { it.map { char -> char.digitToInt() } }!!
 

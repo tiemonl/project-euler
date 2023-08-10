@@ -7,9 +7,9 @@ import dev.garlicbread.euler.utils.factorial
 fun main() = solve { Problem020() }
 
 class Problem020(
-    problemInput: Int = 100
+    problemInput: Int = 100,
 ) : Problem<Int>(
-    problem = 20
+    problem = 20,
 ) {
     override val input = problemInput
 

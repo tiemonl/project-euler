@@ -10,9 +10,9 @@ import kotlin.math.pow
 fun main() = solve { Problem005() }
 
 class Problem005(
-    problemInput: Int = 20
+    problemInput: Int = 20,
 ) : Problem<Int>(
-    problem = 5
+    problem = 5,
 ) {
     override val input = problemInput
 

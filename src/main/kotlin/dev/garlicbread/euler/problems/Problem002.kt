@@ -6,9 +6,9 @@ import dev.garlicbread.euler.solve
 fun main() = solve { Problem002() }
 
 class Problem002(
-    problemInput: Int = 4_000_000
+    problemInput: Int = 4_000_000,
 ) : Problem<Int>(
-    problem = 2
+    problem = 2,
 ) {
     override val input = problemInput
 

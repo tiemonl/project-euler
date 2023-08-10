@@ -6,7 +6,7 @@ import dev.garlicbread.euler.solve
 fun main() = solve { Problem009() }
 
 class Problem009(
-    problemInput: Int = 1000
+    problemInput: Int = 1000,
 ) : Problem<Int>(
     problem = 9,
 ) {

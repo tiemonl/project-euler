@@ -6,7 +6,7 @@ import dev.garlicbread.euler.solve
 fun main() = solve { Problem013() }
 
 class Problem013 : Problem<Long>(
-    problem = 13
+    problem = 13,
 ) {
     override val input = rawInput!!.map { it.toBigInteger() }
 

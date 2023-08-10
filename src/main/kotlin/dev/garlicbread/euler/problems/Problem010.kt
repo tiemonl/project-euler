@@ -7,9 +7,9 @@ import dev.garlicbread.euler.utils.generatePrimesUnderN
 fun main() = solve { Problem010() }
 
 class Problem010(
-    problemInput: Int = 2000000
+    problemInput: Int = 2000000,
 ) : Problem<Long>(
-    problem = 10
+    problem = 10,
 ) {
     override val input = problemInput
 

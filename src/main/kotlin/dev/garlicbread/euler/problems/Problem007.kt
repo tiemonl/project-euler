@@ -7,9 +7,9 @@ import dev.garlicbread.euler.utils.findNthPrime
 fun main() = solve { Problem007() }
 
 class Problem007(
-    problemInput: Int = 10001
+    problemInput: Int = 10001,
 ) : Problem<Number>(
-    problem = 7
+    problem = 7,
 ) {
     override val input = problemInput
 
