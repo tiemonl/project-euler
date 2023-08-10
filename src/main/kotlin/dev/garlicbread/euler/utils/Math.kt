@@ -100,3 +100,7 @@ fun getProperDivisorsOf(n: Long): Set<Long> {
         .filter { it != n }
         .toSortedSet()
 }
+
+private fun isAbundant(n: Long) = getProperDivisorsOf(n).sum() > n
+
+val isAbundant = { n: Long -> isAbundant(n) }.memoize()
